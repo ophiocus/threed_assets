@@ -1,0 +1,8 @@
+name: '3D Assets'
+type: module
+description: 'Drupal-aware 3D/WebGL asset manager — models, textures, HDRIs and audio as media with LOD variants and a normalized descriptor for three.js front-ends. Shared substrate for all Drupal 3D projects.'
+core_version_requirement: ^11
+package: '3D'
+dependencies:
+  - drupal:media
+  - drupal:file

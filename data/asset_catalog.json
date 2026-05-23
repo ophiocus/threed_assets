@@ -1,0 +1,1425 @@
+{
+  "generated": "2026-05-23T06:54:15.369659Z",
+  "source_repo": "ophiocus/VirtuaBooth (master + sea + full history)",
+  "scene_skybox_map": {
+    "sea": "kloofendal_48d_partly_cloudy_puresky_4k_web_high.jpg",
+    "grassland": "resting_place_4k_web_high.jpg",
+    "snow": "snowy_park_01_4k_web_high.jpg",
+    "icosphere": "blender_1.jpg"
+  },
+  "model_manifest": {
+    "source": "public/gltf/animated/animated.gltf",
+    "animations": [
+      "Active-CoolerAction",
+      "CaseBottomAction",
+      "CaseTopAction",
+      "CaseTopGpioAccessAction",
+      "CaseTopHexagonsAction",
+      "CaseTopPortAccessAction",
+      "SD_CARD_Action",
+      "BenchAction",
+      "KenuAction",
+      "woodenRowAction",
+      "DogSledAction",
+      "BeerAction",
+      "gogglesAction",
+      "IcosphereAction"
+    ],
+    "materials": [
+      "Alum-jack",
+      "Copper",
+      "color_cadeca",
+      "Plastic Black",
+      "connector_metal",
+      "Material",
+      "Material.001",
+      "Black_Shine_2",
+      "Material.002",
+      "CaseMaterial",
+      "Ethernet-Case-Green",
+      "Ethernet-Case-Orange",
+      "Front",
+      "connector_metal_ethernet",
+      "mat_2",
+      "mat_8",
+      "mat_6",
+      "Back",
+      "Pcb",
+      "mat_2.001",
+      "mat_0",
+      "mat_0.001",
+      "mat_1.001",
+      "mat_12",
+      "single_solid_bench_bolts",
+      "single_solid_bench_wood",
+      "SkyMat",
+      "terito",
+      "sarga muanyag",
+      "ules",
+      "Vanished_Wood.004",
+      "Vanished_Wood.005",
+      "Material_2_2",
+      "Material_2",
+      "Racing_Bag_2",
+      "Material_3_2",
+      "Mug_antique_metal_mtl",
+      "default",
+      "glass",
+      "IcoMat"
+    ],
+    "meshes": [
+      "Unnamed-Heatsink+fan RPi-5",
+      "Unnamed-Heatsink+fan RPi-5.001",
+      "Unnamed-Heatsink+fan RPi-5.002",
+      "Unnamed-Heatsink+fan RPi-5.003",
+      "Unnamed-Heatsink+fan RPi-5.004",
+      "Unnamed-Heatsink+fan RPi-5.005",
+      "Unnamed-Heatsink+fan RPi-5.006",
+      "Unnamed-Heatsink+fan RPi-5.007",
+      "Part__Feature",
+      "BezierCurve",
+      "bottom",
+      "top",
+      "top-gpio-access",
+      "top-hexagons",
+      "top-port-access",
+      "greenlight",
+      "orengalight",
+      "ethernet003",
+      "IR",
+      "IR001",
+      "mounting-holes",
+      "mounting-holes001",
+      "mounting-holes002",
+      "mounting-holes003",
+      "pcb",
+      "chips",
+      "chips001",
+      "chips002",
+      "chips003",
+      "chips004",
+      "chips005",
+      "chips006",
+      "chips007",
+      "chips008",
+      "chips009",
+      "chips010",
+      "pcba-components Geometry",
+      "pcba-components Geometry001",
+      "pcba-components Geometry002",
+      "pcba-components Geometry003",
+      "pcba-components Geometry004",
+      "pcba-components Geometry005",
+      "pcba-components Geometry006",
+      "pmic",
+      "RASPBERRY_PI_5",
+      "RASPBERRY_PI_5.001",
+      "RASPBERRY_PI_5.002",
+      "RASPBERRY_PI_5.003",
+      "RASPBERRY_PI_5.004",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)001",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)002",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)003",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)004",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)005",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)006",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)007",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)008",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)009",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)010",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)011",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)012",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)013",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)014",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)015",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)016",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)017",
+      "RJ45 Connector, Singal Port 8 Pins(5406721-2)018",
+      "rp1",
+      "SD CARD for REF",
+      "SD CARD for REF001",
+      "switch",
+      "switch001",
+      "USB for REF",
+      "usb2-port001",
+      "usb3-port001",
+      "usb3-port001.001",
+      "single solid bench",
+      "Sphere",
+      "Plane.000",
+      "Cube.000",
+      "Cylinder.002",
+      "DOGSLED",
+      "Mesh",
+      "12314_goggles_v1_l3_stl",
+      "Icosphere"
+    ],
+    "images": [
+      "animated_tex/Black_Shine_2.jpg",
+      "animated_tex/front.jpg",
+      "animated_tex/back.jpg",
+      "animated_tex/Wood%20classic%204_normal.jpg",
+      "animated_tex/Wood%20classic%204_baseColor.jpg",
+      "animated_tex/Wood%20classic%204_metallic-Wood%20classic%204_roughness.png",
+      "animated_tex/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "animated_tex/Material_2_2.jpg",
+      "animated_tex/Material_2.jpg",
+      "animated_tex/Racing_Bag_2.jpg",
+      "animated_tex/Material_3_2.jpg",
+      "animated_tex/mug_specular_color.jpg",
+      "animated_tex/mug_bump.jpg",
+      "animated_tex/mug_color.jpg",
+      "animated_tex/mug_roughness.png",
+      "animated_tex/12314_Googles_diffuse.jpg"
+    ],
+    "node_count": 111
+  },
+  "counts": {
+    "total": 92,
+    "current": 23,
+    "sea": 69,
+    "archived": 0
+  },
+  "assets": [
+    {
+      "path": "public/sounds/677535__klankbeeld__woodlark-field-forest-nl-1127am-230302_0565.wav",
+      "category": "audio",
+      "role": "ambience",
+      "scene": "forest ambience",
+      "resolution": "",
+      "format": "wav",
+      "bytes": 29474144,
+      "status": "branch:sea",
+      "blob_sha": "a78f797eb3de3f8b60c834147640ccf37017e52b",
+      "flags": []
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-Bold-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 118259,
+      "status": "branch:sea",
+      "blob_sha": "3ed7be4bc5b2908326eddde6a32eff453a5cb319",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-BoldItalic-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 121112,
+      "status": "branch:sea",
+      "blob_sha": "6a2607b9dafcfd369a5440b1e6c2d5e30579ea66",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-Italic-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 122495,
+      "status": "branch:sea",
+      "blob_sha": "e1075dcc2464f8a8f913383e3891da709b9feeb8",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-Light-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 117270,
+      "status": "branch:sea",
+      "blob_sha": "11a472ca8a5111187b4269b1407bbfd8dcf8fffd",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-LightItalic-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 122968,
+      "status": "branch:sea",
+      "blob_sha": "431d7e35463dc240b890917ddd533219b2a9ae2e",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/docs/fonts/OpenSans-Regular-webfont.svg",
+      "category": "font",
+      "role": "doc font (jsdoc)",
+      "scene": "",
+      "resolution": "",
+      "format": "svg",
+      "bytes": 119399,
+      "status": "branch:sea",
+      "blob_sha": "25a3952340fc727f6571e182d63a7938a2f27b32",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/blender_1.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "icosphere",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271130,
+      "status": "branch:sea",
+      "blob_sha": "ccf7dfef5180337e9c3b33426942bd09c4c949fc",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/fish_hoek_beach_4k.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "beach (alternate, unused)",
+      "resolution": "4k",
+      "format": "jpg",
+      "bytes": 57311,
+      "status": "branch:sea",
+      "blob_sha": "152e0753349369781cee2f8a6dcbe6ba1e486543",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/fish_hoek_beach_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "beach (alternate, unused)",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 347946,
+      "status": "branch:sea",
+      "blob_sha": "54543ad9c621a6d5848e6e373b6afa8d22d59353",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 70592,
+      "status": "branch:sea",
+      "blob_sha": "0230852847f460fd9337ccb81b5ad0f9231d9f98",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/kloofendal_48d_partly_cloudy_puresky_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 305784,
+      "status": "branch:sea",
+      "blob_sha": "4b998283386c984d666a4bff6645f8c3ff687ae7",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/little_paris_eiffel_tower_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "paris (alternate, unused)",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 90411,
+      "status": "branch:sea",
+      "blob_sha": "513f300cdb3080931a55ab56114b68e797955014",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/resting_place_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "grassland",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 151036,
+      "status": "branch:sea",
+      "blob_sha": "0f8a3c18eac0829ccca1152b3910a0117d8e50d7",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/resting_place_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "grassland",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "branch:sea",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/snowy_park_01_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "snow",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 127005,
+      "status": "branch:sea",
+      "blob_sha": "ab9fb38bb135040c37d89329c71c9419094221fe",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/snowy_park_01_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "snow",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 881151,
+      "status": "branch:sea",
+      "blob_sha": "7ea3d29c4e2f51e384767ebf9c6dc6e4262d6f3d",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/hdri/spiaggia_di_mondello_8k.hdr",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea (true-HDR, unused)",
+      "resolution": "8k",
+      "format": "hdr",
+      "bytes": 97193287,
+      "status": "branch:sea",
+      "blob_sha": "a4b5818c2037e49ab8dcd2cf89ab22d0989edd68",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "public/hdri/blender_1.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "icosphere",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271130,
+      "status": "current",
+      "blob_sha": "ccf7dfef5180337e9c3b33426942bd09c4c949fc",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/fish_hoek_beach_4k.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "beach (alternate, unused)",
+      "resolution": "4k",
+      "format": "jpg",
+      "bytes": 57311,
+      "status": "branch:sea",
+      "blob_sha": "152e0753349369781cee2f8a6dcbe6ba1e486543",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/fish_hoek_beach_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "beach (alternate, unused)",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 347946,
+      "status": "branch:sea",
+      "blob_sha": "54543ad9c621a6d5848e6e373b6afa8d22d59353",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 70592,
+      "status": "branch:sea",
+      "blob_sha": "0230852847f460fd9337ccb81b5ad0f9231d9f98",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/kloofendal_48d_partly_cloudy_puresky_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 305784,
+      "status": "current",
+      "blob_sha": "4b998283386c984d666a4bff6645f8c3ff687ae7",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/little_paris_eiffel_tower_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "paris (alternate, unused)",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 90411,
+      "status": "branch:sea",
+      "blob_sha": "513f300cdb3080931a55ab56114b68e797955014",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/resting_place_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "grassland",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 151036,
+      "status": "branch:sea",
+      "blob_sha": "0f8a3c18eac0829ccca1152b3910a0117d8e50d7",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/resting_place_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "grassland",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "current",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/snowy_park_01_4k_web.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "snow",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 127005,
+      "status": "branch:sea",
+      "blob_sha": "ab9fb38bb135040c37d89329c71c9419094221fe",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/snowy_park_01_4k_web_high.jpg",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "snow",
+      "resolution": "4k web-high",
+      "format": "jpg",
+      "bytes": 881151,
+      "status": "current",
+      "blob_sha": "7ea3d29c4e2f51e384767ebf9c6dc6e4262d6f3d",
+      "flags": []
+    },
+    {
+      "path": "public/hdri/spiaggia_di_mondello_8k.hdr",
+      "category": "hdri",
+      "role": "skybox / environment map",
+      "scene": "sea (true-HDR, unused)",
+      "resolution": "8k",
+      "format": "hdr",
+      "bytes": 97193287,
+      "status": "branch:sea",
+      "blob_sha": "a4b5818c2037e49ab8dcd2cf89ab22d0989edd68",
+      "flags": []
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated.gltf",
+      "category": "model",
+      "role": "scene model",
+      "scene": "",
+      "resolution": "",
+      "format": "gltf",
+      "bytes": 122189,
+      "status": "branch:sea",
+      "blob_sha": "3fb927bd023161372d9bfbe31604a569dd15f7ef",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated.gltf",
+      "category": "model",
+      "role": "scene model",
+      "scene": "",
+      "resolution": "",
+      "format": "gltf",
+      "bytes": 142654,
+      "status": "branch:sea",
+      "blob_sha": "b705b110ac960bf17383ba43681c5984ce2018cf",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated.gltf",
+      "category": "model",
+      "role": "scene model",
+      "scene": "",
+      "resolution": "",
+      "format": "gltf",
+      "bytes": 122189,
+      "status": "branch:sea",
+      "blob_sha": "3fb927bd023161372d9bfbe31604a569dd15f7ef",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/animated.gltf",
+      "category": "model",
+      "role": "scene model",
+      "scene": "",
+      "resolution": "",
+      "format": "gltf",
+      "bytes": 142654,
+      "status": "current",
+      "blob_sha": "b705b110ac960bf17383ba43681c5984ce2018cf",
+      "flags": []
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated.bin",
+      "category": "model-buffer",
+      "role": "geometry/animation buffer",
+      "scene": "",
+      "resolution": "",
+      "format": "bin",
+      "bytes": 10281364,
+      "status": "branch:sea",
+      "blob_sha": "6e4bbd5912d2b2d36baeffbdc02351ecc1754cb1",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated.bin",
+      "category": "model-buffer",
+      "role": "geometry/animation buffer",
+      "scene": "",
+      "resolution": "",
+      "format": "bin",
+      "bytes": 12472168,
+      "status": "branch:sea",
+      "blob_sha": "4bc18105d3426608eee3be8ddf2c43a72c003300",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated.bin",
+      "category": "model-buffer",
+      "role": "geometry/animation buffer",
+      "scene": "",
+      "resolution": "",
+      "format": "bin",
+      "bytes": 10281364,
+      "status": "branch:sea",
+      "blob_sha": "6e4bbd5912d2b2d36baeffbdc02351ecc1754cb1",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/animated.bin",
+      "category": "model-buffer",
+      "role": "geometry/animation buffer",
+      "scene": "",
+      "resolution": "",
+      "format": "bin",
+      "bytes": 12472168,
+      "status": "current",
+      "blob_sha": "4bc18105d3426608eee3be8ddf2c43a72c003300",
+      "flags": []
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Black_Shine_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1637,
+      "status": "branch:sea",
+      "blob_sha": "b1ef763b20ff0285808551832e762b384b7f2ef5",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Material_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 37408,
+      "status": "branch:sea",
+      "blob_sha": "cff93fe5cae3fb7937c052a3cb73057cf078e844",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Material_2_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 33497,
+      "status": "branch:sea",
+      "blob_sha": "8384a8e522dd555666c1a627df2c92825846a9f1",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Material_3_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 42773,
+      "status": "branch:sea",
+      "blob_sha": "d631b45d6889a4879a04ab5ea1c5735837b73f8a",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Racing_Bag_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 43270,
+      "status": "branch:sea",
+      "blob_sha": "bdb705d09635ff6874974a7334dbfb71753537e3",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Wood classic 4_baseColor.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 2269953,
+      "status": "branch:sea",
+      "blob_sha": "93c0df7de25763c4c8112ffabaa0b5c101d459f2",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Wood classic 4_metallic-Wood classic 4_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 230209,
+      "status": "branch:sea",
+      "blob_sha": "e9b645844a0e16a878923a73100b37d836458e73",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/Wood classic 4_normal.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1590857,
+      "status": "branch:sea",
+      "blob_sha": "69d98b2df035b340fbf5ecbf9eb3a69dede77032",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/back.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271400,
+      "status": "branch:sea",
+      "blob_sha": "f14972da18c1f1c28353e200a827eff43db65e7f",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/front.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 295506,
+      "status": "branch:sea",
+      "blob_sha": "7bc0db7497609ff92b3588e4f91e08588096e091",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/_anim/animated_tex/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "branch:sea",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": [
+        "build-copy",
+        "alt-export"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/12314_Googles_diffuse.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 367132,
+      "status": "branch:sea",
+      "blob_sha": "37e1f84cca723a7be5e797e7973c02c33de3bf6f",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Black_Shine_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1637,
+      "status": "branch:sea",
+      "blob_sha": "b1ef763b20ff0285808551832e762b384b7f2ef5",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Material_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 37408,
+      "status": "branch:sea",
+      "blob_sha": "cff93fe5cae3fb7937c052a3cb73057cf078e844",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Material_2_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 33497,
+      "status": "branch:sea",
+      "blob_sha": "8384a8e522dd555666c1a627df2c92825846a9f1",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Material_3_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 42773,
+      "status": "branch:sea",
+      "blob_sha": "d631b45d6889a4879a04ab5ea1c5735837b73f8a",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Racing_Bag_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 43270,
+      "status": "branch:sea",
+      "blob_sha": "bdb705d09635ff6874974a7334dbfb71753537e3",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Wood classic 4_baseColor.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 2269953,
+      "status": "branch:sea",
+      "blob_sha": "93c0df7de25763c4c8112ffabaa0b5c101d459f2",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Wood classic 4_metallic-Wood classic 4_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 230209,
+      "status": "branch:sea",
+      "blob_sha": "e9b645844a0e16a878923a73100b37d836458e73",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/Wood classic 4_normal.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1590857,
+      "status": "branch:sea",
+      "blob_sha": "69d98b2df035b340fbf5ecbf9eb3a69dede77032",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/back.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271400,
+      "status": "branch:sea",
+      "blob_sha": "f14972da18c1f1c28353e200a827eff43db65e7f",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/front.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 295506,
+      "status": "branch:sea",
+      "blob_sha": "7bc0db7497609ff92b3588e4f91e08588096e091",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "branch:sea",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/mug_bump.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 617855,
+      "status": "branch:sea",
+      "blob_sha": "023b1a1f6eb1a4e56c9ddcd81282fdd7b20b57bf",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/mug_color.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 775757,
+      "status": "branch:sea",
+      "blob_sha": "972946b88e7479dd2c9466e86711923e3b975d31",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/mug_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 3061977,
+      "status": "branch:sea",
+      "blob_sha": "8f113a4114ec36377db14c0f2d6d6a0cfb8d3d8c",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "dist/gltf/animated/animated_tex/mug_specular_color.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 412791,
+      "status": "branch:sea",
+      "blob_sha": "e2830485f913f4ce98bde744a7e467e9f399b727",
+      "flags": [
+        "build-copy"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Black_Shine_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1637,
+      "status": "branch:sea",
+      "blob_sha": "b1ef763b20ff0285808551832e762b384b7f2ef5",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Material_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 37408,
+      "status": "branch:sea",
+      "blob_sha": "cff93fe5cae3fb7937c052a3cb73057cf078e844",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Material_2_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 33497,
+      "status": "branch:sea",
+      "blob_sha": "8384a8e522dd555666c1a627df2c92825846a9f1",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Material_3_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 42773,
+      "status": "branch:sea",
+      "blob_sha": "d631b45d6889a4879a04ab5ea1c5735837b73f8a",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Racing_Bag_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 43270,
+      "status": "branch:sea",
+      "blob_sha": "bdb705d09635ff6874974a7334dbfb71753537e3",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Wood classic 4_baseColor.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 2269953,
+      "status": "branch:sea",
+      "blob_sha": "93c0df7de25763c4c8112ffabaa0b5c101d459f2",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Wood classic 4_metallic-Wood classic 4_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 230209,
+      "status": "branch:sea",
+      "blob_sha": "e9b645844a0e16a878923a73100b37d836458e73",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/Wood classic 4_normal.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1590857,
+      "status": "branch:sea",
+      "blob_sha": "69d98b2df035b340fbf5ecbf9eb3a69dede77032",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/back.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271400,
+      "status": "branch:sea",
+      "blob_sha": "f14972da18c1f1c28353e200a827eff43db65e7f",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/front.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 295506,
+      "status": "branch:sea",
+      "blob_sha": "7bc0db7497609ff92b3588e4f91e08588096e091",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/_anim/animated_tex/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "branch:sea",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": [
+        "alt-export"
+      ]
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/12314_Googles_diffuse.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 367132,
+      "status": "current",
+      "blob_sha": "37e1f84cca723a7be5e797e7973c02c33de3bf6f",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Black_Shine_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1637,
+      "status": "current",
+      "blob_sha": "b1ef763b20ff0285808551832e762b384b7f2ef5",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Material_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 37408,
+      "status": "current",
+      "blob_sha": "cff93fe5cae3fb7937c052a3cb73057cf078e844",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Material_2_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 33497,
+      "status": "current",
+      "blob_sha": "8384a8e522dd555666c1a627df2c92825846a9f1",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Material_3_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 42773,
+      "status": "current",
+      "blob_sha": "d631b45d6889a4879a04ab5ea1c5735837b73f8a",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Racing_Bag_2.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 43270,
+      "status": "current",
+      "blob_sha": "bdb705d09635ff6874974a7334dbfb71753537e3",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Wood classic 4_baseColor.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 2269953,
+      "status": "current",
+      "blob_sha": "93c0df7de25763c4c8112ffabaa0b5c101d459f2",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Wood classic 4_metallic-Wood classic 4_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 230209,
+      "status": "current",
+      "blob_sha": "e9b645844a0e16a878923a73100b37d836458e73",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/Wood classic 4_normal.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 1590857,
+      "status": "current",
+      "blob_sha": "69d98b2df035b340fbf5ecbf9eb3a69dede77032",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/back.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 271400,
+      "status": "current",
+      "blob_sha": "f14972da18c1f1c28353e200a827eff43db65e7f",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/front.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 295506,
+      "status": "current",
+      "blob_sha": "7bc0db7497609ff92b3588e4f91e08588096e091",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/kloofendal_48d_partly_cloudy_puresky_4k_web.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "sea",
+      "resolution": "4k web-low",
+      "format": "jpg",
+      "bytes": 1002070,
+      "status": "current",
+      "blob_sha": "ad018222de326a28ee78f5654a89e54e40e4adcc",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/mug_bump.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 617855,
+      "status": "current",
+      "blob_sha": "023b1a1f6eb1a4e56c9ddcd81282fdd7b20b57bf",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/mug_color.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 775757,
+      "status": "current",
+      "blob_sha": "972946b88e7479dd2c9466e86711923e3b975d31",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/mug_roughness.png",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "png",
+      "bytes": 3061977,
+      "status": "current",
+      "blob_sha": "8f113a4114ec36377db14c0f2d6d6a0cfb8d3d8c",
+      "flags": []
+    },
+    {
+      "path": "public/gltf/animated/animated_tex/mug_specular_color.jpg",
+      "category": "texture",
+      "role": "model PBR texture",
+      "scene": "",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 412791,
+      "status": "current",
+      "blob_sha": "e2830485f913f4ce98bde744a7e467e9f399b727",
+      "flags": []
+    },
+    {
+      "path": "public/textures/waternormals.jpg",
+      "category": "texture",
+      "role": "water normal map",
+      "scene": "sea",
+      "resolution": "",
+      "format": "jpg",
+      "bytes": 248813,
+      "status": "current",
+      "blob_sha": "9dfe03ce483a02fff31c35421094c53a333097bc",
+      "flags": []
+    }
+  ]
+}
