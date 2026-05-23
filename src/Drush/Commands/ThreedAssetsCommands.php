@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Drupal\threed_assets\Drush\Commands;
 
-use Drupal\threed_assets\Manifest\GltfManifestExtractor;
 use Drush\Attributes as CLI;
 use Drush\Commands\DrushCommands;
 
@@ -12,10 +11,6 @@ use Drush\Commands\DrushCommands;
  * Drush commands for the 3D asset manager.
  */
 final class ThreedAssetsCommands extends DrushCommands {
-
-  public function __construct(private readonly GltfManifestExtractor $manifest) {
-    parent::__construct();
-  }
 
   /**
    * Summarize a static asset catalog (data/asset_catalog.json or a given path).
