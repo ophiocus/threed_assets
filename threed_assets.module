@@ -1,0 +1,158 @@
+<?php
+
+/**
+ * @file
+ * 3D Assets — module hooks and the L1 Media data-model installer.
+ */
+
+declare(strict_types=1);
+
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\media\Entity\MediaType;
+
+/**
+ * The binary-leaf Media bundles (machine name => label).
+ *
+ * Platform L1: each binary leaf (PLATFORM.md) is a file-backed Media bundle.
+ *
+ * @return array<string,string>
+ *   Bundle machine names keyed to human labels.
+ */
+function _threed_assets_leaf_bundles(): array {
+  return [
+    '3d_model' => '3D Model',
+    '3d_buffer' => '3D Geometry Buffer',
+    '3d_texture' => '3D Texture',
+    '3d_hdri' => '3D HDRI / Environment',
+    '3d_audio' => '3D Audio',
+  ];
+}
+
+/**
+ * Per-bundle file-field settings (allowed extensions + upload subdirectory).
+ *
+ * @return array<string,array<string,string>>
+ *   Bundle machine name => ['file_extensions' => ..., 'file_directory' => ...].
+ */
+function _threed_assets_leaf_file_settings(): array {
+  return [
+    '3d_model' => ['file_extensions' => 'gltf glb', 'file_directory' => '3d/models'],
+    '3d_buffer' => ['file_extensions' => 'bin', 'file_directory' => '3d/buffers'],
+    '3d_texture' => ['file_extensions' => 'jpg jpeg png webp ktx2 exr tga', 'file_directory' => '3d/textures'],
+    '3d_hdri' => ['file_extensions' => 'jpg jpeg png hdr exr ktx2', 'file_directory' => '3d/hdri'],
+    '3d_audio' => ['file_extensions' => 'wav mp3 ogg m4a', 'file_directory' => '3d/audio'],
+  ];
+}
+
+/**
+ * Idempotently create the 3D asset Media data model (platform L1 leaves).
+ *
+ * Binary leaves are file-backed Media bundles. The source field is a *file*
+ * field, never an image field — render-data binaries (normal / roughness / hdri
+ * / geometry buffers) are linear data, not photos, and must never pass through
+ * an image style (PLATFORM.md L0 "two texture lanes" rule). Enforcing that here
+ * structurally: there is simply no image field to run a derivative on.
+ *
+ * Safe to call repeatedly; only missing pieces are created.
+ *
+ * @return string[]
+ *   Machine names of the Media bundles that were newly created this call.
+ */
+function _threed_assets_ensure_media_model(): array {
+  $created = [];
+  $bundles = _threed_assets_leaf_bundles();
+  $file_settings = _threed_assets_leaf_file_settings();
+
+  // Shared field storages (one per field, reused across every bundle).
+  // Source: a FILE field (not image) — the L0 no-style guarantee.
+  _threed_assets_ensure_field_storage('field_3d_file', 'file', ['uri_scheme' => 'public']);
+  // Integrity: sha256 hex digest (64 chars) — the dedup + verify key.
+  _threed_assets_ensure_field_storage('field_3d_hash', 'string', [], 64);
+  _threed_assets_ensure_field_storage('field_3d_role', 'string');
+  _threed_assets_ensure_field_storage('field_3d_scene', 'string');
+  _threed_assets_ensure_field_storage('field_3d_resolution', 'string');
+  // Manifest (model bundle only): extracted clips / materials / meshes JSON.
+  _threed_assets_ensure_field_storage('field_3d_manifest', 'string_long');
+
+  foreach ($bundles as $id => $label) {
+    if (!MediaType::load($id)) {
+      MediaType::create([
+        'id' => $id,
+        'label' => $label,
+        'description' => 'Binary 3D asset leaf — served raw, never image-styled.',
+        'source' => 'file',
+        'source_configuration' => ['source_field' => 'field_3d_file'],
+      ])->save();
+      $created[] = $id;
+    }
+    // Source file field, scoped to this leaf's formats + upload directory.
+    _threed_assets_ensure_field_instance('field_3d_file', $id, 'File', TRUE, $file_settings[$id] ?? []);
+    // Shared metadata.
+    _threed_assets_ensure_field_instance('field_3d_hash', $id, 'Content hash (sha256)');
+    _threed_assets_ensure_field_instance('field_3d_role', $id, 'Role');
+    _threed_assets_ensure_field_instance('field_3d_scene', $id, 'Scene');
+    _threed_assets_ensure_field_instance('field_3d_resolution', $id, 'Resolution / LOD');
+  }
+
+  // The glTF manifest lives only on models.
+  _threed_assets_ensure_field_instance('field_3d_manifest', '3d_model', 'glTF manifest (JSON)');
+
+  return $created;
+}
+
+/**
+ * Create a media field storage if it does not already exist.
+ *
+ * @param string $name
+ *   Field machine name.
+ * @param string $type
+ *   Field type plugin id (file, string, string_long, …).
+ * @param array $settings
+ *   Storage settings (e.g. ['uri_scheme' => 'public'] for file).
+ * @param int|null $max_length
+ *   Optional max length for string storages.
+ */
+function _threed_assets_ensure_field_storage(string $name, string $type, array $settings = [], ?int $max_length = NULL): void {
+  if (FieldStorageConfig::loadByName('media', $name)) {
+    return;
+  }
+  if ($max_length !== NULL) {
+    $settings['max_length'] = $max_length;
+  }
+  FieldStorageConfig::create([
+    'field_name' => $name,
+    'entity_type' => 'media',
+    'type' => $type,
+    'cardinality' => 1,
+    'settings' => $settings,
+  ])->save();
+}
+
+/**
+ * Create a media field instance on a bundle if it does not already exist.
+ *
+ * @param string $name
+ *   Field machine name (its storage must exist).
+ * @param string $bundle
+ *   Media bundle machine name.
+ * @param string $label
+ *   Human field label.
+ * @param bool $required
+ *   Whether the field is required.
+ * @param array $settings
+ *   Instance settings (e.g. file_extensions, file_directory).
+ */
+function _threed_assets_ensure_field_instance(string $name, string $bundle, string $label, bool $required = FALSE, array $settings = []): void {
+  if (FieldConfig::loadByName('media', $bundle, $name)) {
+    return;
+  }
+  FieldConfig::create([
+    'field_name' => $name,
+    'entity_type' => 'media',
+    'bundle' => $bundle,
+    'label' => $label,
+    'required' => $required,
+    'settings' => $settings,
+  ])->save();
+}
