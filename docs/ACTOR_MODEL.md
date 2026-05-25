@@ -136,9 +136,21 @@ into: a state-machine runtime + a World sequencer + per-actor lanes.
 
 ## Roadmap refit
 
-- **Phase 0** — not a "config-driven flat engine" but an **action interpreter**:
-  World sequencer + per-actor lanes, booting actors from descriptors, consuming
-  the booth config.
-- **Phase 2** — Drupal authoring: **Actor / State / Action / Trigger / Shot**
-  Paragraph types on the Commerce product; `BoothController` flattens the
-  protagonist tree + scenes → the booth config the interpreter reads.
+This engine spec sits inside the platform stack — see `PLATFORM.md` for the
+canonical layers, the four locked forks, and the full build order. The actor
+model is **L3** of that stack; its milestones land in these platform phases:
+
+- **P2 (platform L2/L6)** — the **action interpreter**: not a "config-driven flat
+  engine" but a World sequencer + per-actor lanes, booting actors from
+  descriptors, consuming the booth config. Pairs with the behavior/VFX registry
+  and the engine's migration into `threed_assets` as the shared world client
+  (fork **B**). *(Was "Phase 0" here.)*
+- **P3 (platform L3/L4)** — composition authoring + the stage builder; the three
+  scenes re-expressed as manifests and pixel-matched.
+- **P4 (platform L5)** — Drupal authoring: **Actor / State / Action / Trigger /
+  Shot** Paragraph types on the Commerce product (per fork **C**, Paragraphs own
+  the *per-product arrangement*); `BoothController` flattens the protagonist tree +
+  scenes → the booth config the interpreter reads. *(Was "Phase 2" here.)*
+
+Prerequisite: **P1 (platform L0/L1)** — asset entities + binary protocols — lands
+the Media bundles and descriptors the interpreter boots actors from.
