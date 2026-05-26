@@ -7,4 +7,4 @@ services:
     arguments: ['@logger.channel.threed_assets']
 
   Drupal\threed_assets\AssetResolver:
-    arguments: ['@file_url_generator', '@logger.channel.threed_assets']
+    arguments: ['@file_url_generator']

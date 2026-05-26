@@ -7,15 +7,18 @@ namespace Drupal\threed_assets\Manifest;
 use Psr\Log\LoggerInterface;
 
 /**
- * Extracts the internal manifest of a glTF model — animation clips, materials,
- * meshes and image URIs — so editors and booth configs can reference clip names
- * (e.g. "CaseTopHexagonsAction") without opening Blender.
+ * Extracts a glTF model's internal manifest.
+ *
+ * Pulls the animation clips, materials, meshes and image URIs from a glTF
+ * document, so configs can reference names without opening Blender.
  */
 final class GltfManifestExtractor {
 
   public function __construct(private readonly LoggerInterface $logger) {}
 
   /**
+   * Extract clips, materials, meshes and image URIs from a glTF document.
+   *
    * @param string $gltfJson
    *   The raw .gltf (JSON) contents. (.glb: parse the embedded JSON chunk.)
    *

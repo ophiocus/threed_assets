@@ -38,10 +38,11 @@ final class ThreedAssetsCommands extends DrushCommands {
   }
 
   /**
-   * Create (idempotently) the L1 Media data model — binary-leaf bundles + fields.
+   * Create (idempotently) the L1 Media data model.
    *
-   * Applies _threed_assets_ensure_media_model() to a running site, so an
-   * already-installed module picks up the data model without a reinstall.
+   * Builds the binary-leaf bundles and their fields by applying
+   * _threed_assets_ensure_media_model() to a running site, so an already
+   * installed module picks up the data model without a reinstall.
    */
   #[CLI\Command(name: 'threed-assets:install-model', aliases: ['ta:model'])]
   public function installModel(): void {
@@ -69,11 +70,12 @@ final class ThreedAssetsCommands extends DrushCommands {
   /**
    * Import binary-leaf catalog assets into Media entities (platform L1).
    *
-   * Reads data/asset_catalog.json, imports every on-disk `current` asset as a
-   * file-backed Media entity of the matching 3d_* bundle. Integrity protocol:
-   * a sha256 is computed per file and stored on field_3d_hash, which is also the
-   * dedup key — byte-identical assets collapse to one Media, and re-running is
-   * idempotent. Models additionally get their glTF manifest extracted.
+   * Reads data/asset_catalog.json and imports every on-disk `current` asset
+   * as a file-backed Media entity of the matching 3d_* bundle. Integrity
+   * protocol: a sha256 is computed per file and stored on field_3d_hash,
+   * which is also the dedup key, so byte-identical assets collapse to one
+   * Media and re-running is idempotent. Models additionally get their glTF
+   * manifest extracted.
    */
   #[CLI\Command(name: 'threed-assets:import', aliases: ['ta:import'])]
   #[CLI\Option(name: 'purge', description: 'Delete existing 3D media before importing.')]
@@ -153,7 +155,7 @@ final class ThreedAssetsCommands extends DrushCommands {
         continue;
       }
 
-      // Managed file referencing the existing on-disk binary (reuse if present).
+      // Managed file referencing the on-disk binary (reuse if present).
       $existingFiles = $fileStorage->loadByProperties(['uri' => $uri]);
       $file = $existingFiles ? reset($existingFiles) : $fileStorage->create(['uri' => $uri, 'status' => 1]);
       $file->save();

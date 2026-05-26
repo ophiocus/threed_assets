@@ -1,9 +1,13 @@
 {
-    "name": "ophiocus/threed_assets",
+    "name": "drupal/threed_assets",
     "description": "Drupal-aware 3D/WebGL asset manager: models, textures, HDRIs and audio as first-class media with LOD variants and a normalized descriptor for three.js front-ends.",
     "type": "drupal-module",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://github.com/ophiocus/threed_assets",
+    "homepage": "https://www.drupal.org/project/threed_assets",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/threed_assets",
+        "source": "https://git.drupalcode.org/project/threed_assets"
+    },
     "require": {
         "php": ">=8.3",
         "drupal/core": "^11"

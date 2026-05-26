@@ -2,7 +2,7 @@
 
 /**
  * @file
- * 3D Assets — module hooks and the L1 Media data-model installer.
+ * Hooks and the L1 Media data-model installer for the 3D Assets module.
  */
 
 declare(strict_types=1);

@@ -10,9 +10,9 @@ declare(strict_types=1);
 /**
  * Implements hook_install().
  *
- * Stands up the L1 Media data model (binary-leaf bundles + fields) on a fresh
- * install. The logic lives in _threed_assets_ensure_media_model() so it can also
- * be applied to an already-installed site via `drush threed-assets:install-model`.
+ * Stands up the L1 Media data model (binary-leaf bundles + fields) on a
+ * fresh install. The same logic is also exposed as the drush command
+ * threed-assets:install-model for already-installed sites.
  */
 function threed_assets_install(): void {
   $created = _threed_assets_ensure_media_model();

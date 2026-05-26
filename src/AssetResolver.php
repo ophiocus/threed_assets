@@ -6,28 +6,37 @@ namespace Drupal\threed_assets;
 
 use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\media\MediaInterface;
-use Psr\Log\LoggerInterface;
 
 /**
- * Turns a 3D asset (catalog entry or media entity) into a normalized descriptor
- * that any three.js front-end can consume.
+ * Normalizes a 3D asset into a descriptor any three.js front-end can consume.
  *
- * The descriptor is the cross-project contract:
- *   [ id, kind, role, scene, url, format, bytes, resolution, lod[], manifest{} ]
+ * Works from a static catalog entry or a media entity. The descriptor is the
+ * cross-project contract:
+ *   [id, kind, role, scene, url, format, bytes, resolution, lod[], manifest{}]
  *
- * `kind` is one of: model | model-buffer | texture | hdri | audio.
- * `lod` lists resolution variants (web-low / web-high / 8k) so the front-end can
- * pick by device/quality — the thing the original showroom hand-managed.
+ * `kind` is one of: model, model-buffer, texture, hdri or audio. `lod` lists
+ * resolution variants (web-low / web-high / 8k) so the front-end can pick by
+ * device or quality.
  */
 final class AssetResolver {
 
+  /**
+   * Maps a 3d_* media bundle to a descriptor `kind`.
+   */
+  private const BUNDLE_KIND = [
+    '3d_model' => 'model',
+    '3d_buffer' => 'model-buffer',
+    '3d_texture' => 'texture',
+    '3d_hdri' => 'hdri',
+    '3d_audio' => 'audio',
+  ];
+
   public function __construct(
     private readonly FileUrlGeneratorInterface $fileUrlGenerator,
-    private readonly LoggerInterface $logger,
   ) {}
 
   /**
-   * Build a descriptor from a static catalog entry (ASSET_CATALOG.json shape).
+   * Build a descriptor from a static catalog entry (asset_catalog.json shape).
    *
    * @param array $entry
    *   One asset record from the catalog.
@@ -54,22 +63,11 @@ final class AssetResolver {
   }
 
   /**
-   * Map a 3d_* Media bundle back to a descriptor `kind`.
-   */
-  private const BUNDLE_KIND = [
-    '3d_model' => 'model',
-    '3d_buffer' => 'model-buffer',
-    '3d_texture' => 'texture',
-    '3d_hdri' => 'hdri',
-    '3d_audio' => 'audio',
-  ];
-
-  /**
-   * Build a descriptor from a 3D asset Media entity (platform L1).
+   * Build a descriptor from a 3D asset media entity (platform L1).
    *
-   * The entity-backed counterpart to fromCatalogEntry(): the same cross-project
-   * descriptor, sourced from the imported Media instead of the static JSON. Adds
-   * `hash` (sha256) so a front-end can verify integrity (L0).
+   * The entity-backed counterpart to fromCatalogEntry(): same descriptor,
+   * sourced from imported Media instead of static JSON, plus a `hash` (sha256)
+   * so a front-end can verify integrity (L0).
    *
    * @param \Drupal\media\MediaInterface $media
    *   A media entity of a 3d_* bundle.
@@ -112,9 +110,12 @@ final class AssetResolver {
    * Attach a resolution ladder to a descriptor.
    *
    * @param array $descriptor
-   *   A descriptor from fromCatalogEntry().
+   *   A descriptor from fromCatalogEntry() or fromMedia().
    * @param array $variants
    *   Descriptors for the same logical asset at other resolutions.
+   *
+   * @return array
+   *   The descriptor with its `lod` ladder populated.
    */
   public function withLod(array $descriptor, array $variants): array {
     $descriptor['lod'] = array_map(
@@ -128,6 +129,15 @@ final class AssetResolver {
     return $descriptor;
   }
 
+  /**
+   * Derive a lowercase, underscore-safe id from a file path.
+   *
+   * @param string $path
+   *   A file path or URI.
+   *
+   * @return string
+   *   The slug: filename, lowercased, non-alphanumerics collapsed to '_'.
+   */
   private function slug(string $path): string {
     $base = pathinfo($path, PATHINFO_FILENAME);
     return strtolower(preg_replace('/[^a-z0-9]+/i', '_', $base));
