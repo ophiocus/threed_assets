@@ -46,6 +46,18 @@ function _threed_assets_leaf_file_settings(): array {
 }
 
 /**
+ * Implements hook_theme().
+ */
+function threed_assets_theme(): array {
+  return [
+    'threed_assets_capture' => [
+      'variables' => ['media_id' => NULL, 'capture_size' => 512],
+      'template' => 'threed-assets-capture',
+    ],
+  ];
+}
+
+/**
  * Idempotently create the 3D asset Media data model (platform L1 leaves).
  *
  * Binary leaves are file-backed Media bundles. The source field is a *file*
@@ -98,6 +110,20 @@ function _threed_assets_ensure_media_model(): array {
   // The glTF manifest lives only on models.
   _threed_assets_ensure_field_instance('field_3d_manifest', '3d_model', 'glTF manifest (JSON)');
 
+  // Turntable captures: a multi-value image field on the model bundle. Filled
+  // by the in-browser capture mini-app with the six cardinal-view stills.
+  // These are sRGB *display* images (not render data), so the image field +
+  // image styles are appropriate -- the L0 two-texture-lanes rule applies to
+  // render-data binaries only.
+  _threed_assets_ensure_field_storage('field_3d_render', 'image', ['uri_scheme' => 'public'], NULL, -1);
+  _threed_assets_ensure_field_instance('field_3d_render', '3d_model', 'Turntable renders', FALSE, [
+    'file_extensions' => 'png jpg jpeg webp',
+    'file_directory' => '3d/renders',
+    'alt_field' => FALSE,
+    'alt_field_required' => FALSE,
+    'title_field' => FALSE,
+  ]);
+
   return $created;
 }
 
@@ -113,7 +139,7 @@ function _threed_assets_ensure_media_model(): array {
  * @param int|null $max_length
  *   Optional max length for string storages.
  */
-function _threed_assets_ensure_field_storage(string $name, string $type, array $settings = [], ?int $max_length = NULL): void {
+function _threed_assets_ensure_field_storage(string $name, string $type, array $settings = [], ?int $max_length = NULL, int $cardinality = 1): void {
   if (FieldStorageConfig::loadByName('media', $name)) {
     return;
   }
@@ -124,7 +150,7 @@ function _threed_assets_ensure_field_storage(string $name, string $type, array $
     'field_name' => $name,
     'entity_type' => 'media',
     'type' => $type,
-    'cardinality' => 1,
+    'cardinality' => $cardinality,
     'settings' => $settings,
   ])->save();
 }

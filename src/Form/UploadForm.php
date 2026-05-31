@@ -145,6 +145,11 @@ final class UploadForm extends FormBase {
       'Asset saved: @label (sha @h…)',
       ['@label' => $media->label(), '@h' => substr((string) $media->get('field_3d_hash')->value, 0, 12)]
     ));
+    // For models, hand off to the in-browser turntable capture.
+    if ($media->bundle() === '3d_model') {
+      $form_state->setRedirect('threed_assets.capture', ['media' => $media->id()]);
+      return;
+    }
     $form_state->setRedirect('entity.media.canonical', ['media' => $media->id()]);
   }
 

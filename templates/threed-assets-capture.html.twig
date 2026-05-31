@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Hosts the in-browser turntable capture mini-app.
+ *
+ * Available variables:
+ *  - media_id: id of the source 3d_model media.
+ *  - capture_size: target square pixel size for each rendered view.
+ *
+ * The capture JS reads model + ingest URLs from drupalSettings, runs six
+ * cardinal renders, and POSTs them back to ingest the renders.
+ */
+#}
+<div id="threed-assets-capture" data-media-id="{{ media_id }}">
+  <div id="stage"
+       style="width:{{ capture_size }}px;height:{{ capture_size }}px;background:#202428;border:1px solid #3a3f44;display:inline-block;"></div>
+  <p id="status" style="margin-top:1em;font-family:monospace;">Initializing&hellip;</p>
+  <noscript>
+    <p>JavaScript is required to capture the turntable.</p>
+  </noscript>
+</div>

@@ -1,0 +1,11 @@
+capture:
+  version: VERSION
+  js:
+    js/capture.js:
+      attributes:
+        type: module
+      preprocess: false
+      minified: true
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

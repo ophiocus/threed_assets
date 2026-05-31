@@ -5,3 +5,21 @@ threed_assets.upload:
     _title: 'Upload 3D asset'
   requirements:
     _permission: 'administer threed_assets'
+
+threed_assets.capture:
+  path: '/admin/content/3d/media/{media}/capture'
+  defaults:
+    _controller: '\Drupal\threed_assets\Controller\CaptureController::page'
+    _title: 'Capture turntable'
+  requirements:
+    _permission: 'administer threed_assets'
+    media: \d+
+
+threed_assets.capture_ingest:
+  path: '/admin/content/3d/media/{media}/capture/ingest'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\threed_assets\Controller\CaptureController::ingest'
+  requirements:
+    _permission: 'administer threed_assets'
+    media: \d+
