@@ -8,3 +8,9 @@ services:
 
   Drupal\threed_assets\AssetResolver:
     arguments: ['@file_url_generator']
+
+  Drupal\threed_assets\AssetIngestor:
+    arguments:
+      - '@entity_type.manager'
+      - '@file_system'
+      - '@Drupal\threed_assets\Manifest\GltfManifestExtractor'

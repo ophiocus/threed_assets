@@ -1,0 +1,7 @@
+threed_assets.upload:
+  path: '/admin/content/3d/upload'
+  defaults:
+    _form: '\Drupal\threed_assets\Form\UploadForm'
+    _title: 'Upload 3D asset'
+  requirements:
+    _permission: 'administer threed_assets'

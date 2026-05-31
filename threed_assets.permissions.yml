@@ -1,0 +1,4 @@
+administer threed_assets:
+  title: 'Administer 3D assets'
+  description: 'Upload, manage and re-render the 3D asset library.'
+  restrict access: true

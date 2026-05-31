@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\threed_assets\Drush\Commands;
 
-use Drupal\threed_assets\Manifest\GltfManifestExtractor;
+use Drupal\threed_assets\AssetIngestor;
 use Drush\Attributes as CLI;
 use Drush\Commands\DrushCommands;
 
@@ -93,6 +93,7 @@ final class ThreedAssetsCommands extends DrushCommands {
 
     $etm = \Drupal::entityTypeManager();
     $fs = \Drupal::service('file_system');
+    $ingestor = \Drupal::service(AssetIngestor::class);
     $mediaStorage = $etm->getStorage('media');
     $fileStorage = $etm->getStorage('file');
 
@@ -139,19 +140,12 @@ final class ThreedAssetsCommands extends DrushCommands {
         continue;
       }
 
-      $real = $fs->realpath($uri);
-      $sha = hash_file('sha256', $real);
+      $sha = hash_file('sha256', $fs->realpath($uri));
 
       // Dedup: within this run and against already-imported media.
-      if (isset($seen[$sha])) {
+      if (isset($seen[$sha]) || $ingestor->findByHash($sha)) {
         $dupes++;
-        continue;
-      }
-      $exist = $mediaStorage->getQuery()->accessCheck(FALSE)
-        ->condition('field_3d_hash', $sha)->range(0, 1)->execute();
-      if ($exist) {
         $seen[$sha] = TRUE;
-        $dupes++;
         continue;
       }
 
@@ -160,23 +154,12 @@ final class ThreedAssetsCommands extends DrushCommands {
       $file = $existingFiles ? reset($existingFiles) : $fileStorage->create(['uri' => $uri, 'status' => 1]);
       $file->save();
 
-      $media = $mediaStorage->create([
-        'bundle' => $bundle,
+      $ingestor->ingestFile($file, $bundle, [
         'name' => basename($rel),
-        'field_3d_file' => ['target_id' => $file->id()],
-        'field_3d_hash' => $sha,
-        'field_3d_role' => $a['role'] ?? '',
-        'field_3d_scene' => $a['scene'] ?? '',
-        'field_3d_resolution' => $a['resolution'] ?? '',
-      ]);
-
-      if ($bundle === '3d_model') {
-        $extractor = \Drupal::service(GltfManifestExtractor::class);
-        $manifest = $extractor->extract((string) file_get_contents($real));
-        $media->set('field_3d_manifest', json_encode($manifest));
-      }
-
-      $media->save();
+        'role' => $a['role'] ?? '',
+        'scene' => $a['scene'] ?? '',
+        'resolution' => $a['resolution'] ?? '',
+      ], $sha);
       $seen[$sha] = TRUE;
       $created[$bundle] = ($created[$bundle] ?? 0) + 1;
     }

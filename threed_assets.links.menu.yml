@@ -1,0 +1,6 @@
+threed_assets.upload:
+  title: 'Upload 3D asset'
+  description: 'Upload a 3D model, texture, HDRI, geometry buffer or audio file.'
+  route_name: threed_assets.upload
+  parent: system.admin_content
+  weight: 10
