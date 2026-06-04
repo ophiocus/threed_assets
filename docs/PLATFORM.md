@@ -2,7 +2,72 @@
 
 The bigger picture, consolidated. `ACTOR_MODEL.md` is the canonical **engine
 spec**; `DESIGN.md` is the **asset-manager spec**; this is the **platform spec**
-that contains them both and names the build order. Locked 2026-05-25.
+that contains them both and names the build order. Locked 2026-05-25;
+**pivoted 2026-06-04** (see Pivot section below).
+
+## Pivot 2026-06-04 — adopt the `drupal-three-js-theme` substrate
+
+After a deep audit of the sibling project `ophiocus/drupal-three-js-theme`,
+the platform's middle and upper layers (L2 / L3 / L4 / L6) are **no longer
+built here**. They are **adopted** from the theme + its `world_signature`
+module, which has already implemented mature versions of what this doc had
+queued as P2–P4. The locked four forks (A · B · C · D) survive; only the
+*source* of each layer changes.
+
+### What stays
+- **L0 / L1 in `threed_assets`** (binary substrate + asset entities). Unchanged.
+  The Media data model, AssetIngestor, AssetResolver, GltfManifestExtractor and
+  turntable capture stay as-is.
+- **Fork A** (decompose-and-address-into) and **Fork C** (Media leaves +
+  composite entities + Paragraphs-for-arrangement) — unchanged.
+
+### What changes
+- **L2 Behavior registry** → adopted as `world_signature.manifesto.component_types`
+  (the eight: color_slot · texture_slot · animation_slot · hitbox · physics ·
+  sound_slot · light_emitter · trigger_event).
+- **L3 Composition** → adopted as `SmartObject` + `Components` +
+  per-bundle `Builders` from `src/world/runtime/smart-objects/`.
+- **L4 Authoring** → adopted as their in-canvas **Stage GUI** (Phase 2–4
+  shipped) + `PATCH /world/edit/{stage,config,interpretation}` endpoints.
+- **L6 World client** → adopted as `src/world/runtime/` + the strict
+  `src/toolbox/` boundary. Fork B (engine lives in shared substrate) is now
+  satisfied by *the theme as the shared substrate*, not by lifting the booth
+  engine into `threed_assets`.
+- **`virtuabooth` is `composer require`d into the theme** (or vice versa —
+  the Drupal site pulls the theme; the module pulls nothing of the engine).
+  The site enables `drupal_threejs` (theme) + `world_signature` (module).
+
+### What `virtuabooth` becomes
+A thin Drupal module whose **sole responsibility is L5 Commerce binding to
+the manifesto**:
+
+1. Defines two new manifesto item types via MetaphorPlugins:
+   - `metaphor.commerce.product` — the protagonist (the sellable base good).
+   - `metaphor.commerce.configurable_item` — accessories / parts (variations,
+     separates, displays) that compose onto a product.
+2. Ships per-product config instances. The Raspberry Pi 5 ships first:
+   `world_signature.commerce.product.rpi5` + `…configurable_item.rpi5_case`,
+   `…configurable_item.rpi5_fan`, `…configurable_item.rpi5_sdcard`. Each
+   configurable item declares the component slots it exposes (color_slot,
+   animation_slot per state, trigger_event for equip, hitbox), and binds its
+   states to Commerce variations.
+3. Maps Commerce Products → manifesto descriptors via a small service that
+   extends the world_signature `DescriptorBuilder`.
+4. Drops what it used to ship: the IIFE engine bundle, the Twig template's
+   engine markup, the legacy `BoothConfigBuilder` actor-model JSON emission.
+   The booth route becomes a thin handoff that emits a manifest the theme's
+   world bundle consumes.
+
+### What stays open at this pivot
+- `drupal_threejs` theme + `world_signature` module enabled in DDEV without
+  breaking the running booth route — needs verification.
+- Whether `world_signature` runs cleanly without RESTHeart configured (the
+  cypher queues jobs; a disconnected gateway means failed-job churn). Likely
+  resolved by either pointing it at a dev RESTHeart or disabling the queue
+  worker in the booth's local profile.
+- Adapter ownership (W2 from the analysis) — ingestion adapters
+  (PolyHaven, AmbientCG, …) move into `threed_assets` so both projects share
+  them, but that's a follow-up, not a pivot blocker.
 
 ## The reframe
 
