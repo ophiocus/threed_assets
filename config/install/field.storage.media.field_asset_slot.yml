@@ -1,0 +1,28 @@
+# field.storage.media.field_asset_slot
+#
+# Which manifesto slot the asset binds to — e.g. "case_diffuse",
+# "fan_idle_clip", "stall_floor". Plain string; the canonical
+# vocabulary lives in the manifesto, not in a Drupal taxonomy.
+# Free-form so any property can author its own slot names without
+# pre-registering them.
+
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_asset_slot
+field_name: field_asset_slot
+entity_type: media
+type: string
+settings:
+  max_length: 128
+  case_sensitive: false
+  is_ascii: true
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_asset_pack
+    - media.type.3d_texture
+id: media.3d_texture.field_asset_pack
+field_name: field_asset_pack
+entity_type: media
+bundle: 3d_texture
+label: 'Source pack'
+description: 'Origin pack identifier (e.g. polyhaven, ambientcg, polypizza, toxsam, custom_upload, rpi5_demo).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+# field.storage.media.field_asset_pack
+#
+# Source pack identifier — e.g. "polyhaven", "ambientcg", "polypizza",
+# "toxsam", "custom_upload", "rpi5_demo". Plain string for portability;
+# R5b's migration may upgrade to an entity_reference once threed_assets
+# ships its own pack vocabulary, but the string form survives any future
+# refactor (the pack name is the stable key).
+
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_asset_pack
+field_name: field_asset_pack
+entity_type: media
+type: string
+settings:
+  max_length: 64
+  case_sensitive: false
+  is_ascii: true
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

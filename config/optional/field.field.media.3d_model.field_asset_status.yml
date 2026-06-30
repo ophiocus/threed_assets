@@ -1,0 +1,20 @@
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_asset_status
+    - media.type.3d_model
+  module:
+    - options
+id: media.3d_model.field_asset_status
+field_name: field_asset_status
+entity_type: media
+bundle: 3d_model
+label: 'Lifecycle status'
+description: 'live | draft | archived. AssetSnapshotBuilder filters on "live" when picking which asset wins for a given (atmosphere, slot) cell.'
+required: false
+translatable: false
+default_value:
+  - value: draft
+default_value_callback: ''
+settings: {  }
+field_type: list_string

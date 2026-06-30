@@ -1,0 +1,19 @@
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_asset_atmospheres
+    - media.type.3d_model
+  module:
+    - options
+id: media.3d_model.field_asset_atmospheres
+field_name: field_asset_atmospheres
+entity_type: media
+bundle: 3d_model
+label: 'Atmospheres'
+description: 'Which atmospheres use this asset. Multi-valued. Empty = wired everywhere (atmosphere-agnostic).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
